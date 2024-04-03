@@ -1,4 +1,5 @@
-import IconBtn from "./IconBtn"
+import React from 'react'
+import IconBtn from './IconBtn'
 
 export default function ConfirmationModal({ modalData }) {
   return (
@@ -16,7 +17,7 @@ export default function ConfirmationModal({ modalData }) {
             text={modalData?.btn1Text}
           />
           <button
-            className="cursor-pointer rounded-md bg-richblack-200 py-[8px] px-[20px] font-semibold text-richblack-900"
+            className="cursor-pointer rounded-md bg-richblack-200 py-[8px] px-[20px] font-semibold text-richblack-900 hover:bg-richblack-400 hover:transition-all"
             onClick={modalData?.btn2Handler}
           >
             {modalData?.btn2Text}

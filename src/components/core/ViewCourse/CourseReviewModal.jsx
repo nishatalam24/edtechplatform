@@ -5,7 +5,7 @@ import ReactStars from "react-rating-stars-component"
 import { useSelector } from "react-redux"
 
 import { createRating } from "../../../services/operations/courseDetailsAPI"
-import IconBtn from "../../Common/IconBtn"
+import IconBtn from "../../common/IconBtn"
 
 export default function CourseReviewModal({ setReviewModal }) {
   const { user } = useSelector((state) => state.profile)
@@ -37,7 +37,7 @@ export default function CourseReviewModal({ setReviewModal }) {
         rating: data.courseRating,
         review: data.courseExperience,
       },
-      token
+      token,
     )
     setReviewModal(false)
   }
@@ -86,6 +86,7 @@ export default function CourseReviewModal({ setReviewModal }) {
               </label>
               <textarea
                 id="courseExperience"
+                type="input"
                 placeholder="Add Your Experience"
                 {...register("courseExperience", { required: true })}
                 className="form-style resize-x-none min-h-[130px] w-full"

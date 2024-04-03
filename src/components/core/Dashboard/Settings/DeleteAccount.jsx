@@ -1,4 +1,4 @@
-import { FiTrash2 } from "react-icons/fi"
+import {FiTrash2} from "react-icons/fi"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 

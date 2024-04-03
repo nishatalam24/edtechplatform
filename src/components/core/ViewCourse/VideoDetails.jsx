@@ -8,7 +8,9 @@ import { BigPlayButton, Player } from "video-react"
 
 import { markLectureAsComplete } from "../../../services/operations/courseDetailsAPI"
 import { updateCompletedLectures } from "../../../slices/viewCourseSlice"
-import IconBtn from "../../Common/IconBtn"
+import IconBtn from "../../common/IconBtn"
+import { Autoplay } from "swiper"
+import { BsCheckLg } from "react-icons/bs"
 
 const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams()
@@ -208,6 +210,7 @@ const VideoDetails = () => {
                   if (playerRef?.current) {
                     // set the current time of the video to 0
                     playerRef?.current?.seek(0)
+                    playerRef?.current?.play()
                     setVideoEnded(false)
                   }
                 }}

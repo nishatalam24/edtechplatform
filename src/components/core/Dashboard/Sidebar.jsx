@@ -1,12 +1,13 @@
-import { useState } from "react"
-import { VscSignOut } from "react-icons/vsc"
-import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from 'react'
 
-import { sidebarLinks } from "../../../data/dashboard-links"
-import { logout } from "../../../services/operations/authAPI"
-import ConfirmationModal from "../../Common/ConfirmationModal"
+import {sidebarLinks} from "../../../data/dashboard-links";
+import {logout} from "../../../services/operations/authAPI";
+import { useDispatch, useSelector } from 'react-redux';
 import SidebarLink from "./SidebarLink"
+import {useNavigate} from "react-router-dom"
+import {VscSignOut} from "react-icons/vsc"
+import ConfirmationModal from '../../common/ConfirmationModal';
+
 
 export default function Sidebar() {
   const { user, loading: profileLoading } = useSelector(

@@ -10,18 +10,18 @@ export default function RenderCartCourses() {
   const dispatch = useDispatch()
   return (
     <div className="flex flex-1 flex-col">
-      {cart.map((course, indx) => (
+      {cart.map((course, index) => (
         <div
           key={course._id}
           className={`flex w-full flex-wrap items-start justify-between gap-6 ${
-            indx !== cart.length - 1 && "border-b border-b-richblack-400 pb-6"
-          } ${indx !== 0 && "mt-6"} `}
+            index !== cart.length - 1 && "border-b border-b-richblack-400 pb-6"
+          } ${index !== 0 && "mt-6"} `}
         >
           <div className="flex flex-1 flex-col gap-4 xl:flex-row">
             <img
               src={course?.thumbnail}
               alt={course?.courseName}
-              className="h-[148px] w-[220px] rounded-lg object-cover"
+              className="w-[185px] h-[148px] relative rounded-lg"
             />
             <div className="flex flex-col space-y-1">
               <p className="text-lg font-medium text-richblack-5">
@@ -30,8 +30,9 @@ export default function RenderCartCourses() {
               <p className="text-sm text-richblack-300">
                 {course?.category?.name}
               </p>
-              <div className="flex items-center gap-2">
-                <span className="text-yellow-5">4.5</span>
+              <div className=" w-[407px] h-6 justify-start items-center gap-2 inline-flex">
+                <span className="text-yellow-400 text-[16px] font-semibold leading-normal">4.5</span>
+                <span className="flex flex-col w-24">
                 <ReactStars
                   count={5}
                   value={course?.ratingAndReviews?.length}
@@ -41,7 +42,8 @@ export default function RenderCartCourses() {
                   emptyIcon={<FaStar />}
                   fullIcon={<FaStar />}
                 />
-                <span className="text-richblack-400">
+                </span>
+                <span className="text-richblack-500 text-[16px] font-normal leading-normal ">
                   {course?.ratingAndReviews?.length} Ratings
                 </span>
               </div>
@@ -50,12 +52,12 @@ export default function RenderCartCourses() {
           <div className="flex flex-col items-end space-y-2">
             <button
               onClick={() => dispatch(removeFromCart(course._id))}
-              className="flex items-center gap-x-1 rounded-md border border-richblack-600 bg-richblack-700 py-3 px-[12px] text-pink-200"
+              className="w-28 h-12 p-3 rounded-lg border  border-richblack-700 bg-richblack-800 hover:bg-richblack-900 justify-start items-center gap-2 inline-flex"
             >
-              <RiDeleteBin6Line />
-              <span>Remove</span>
+              <RiDeleteBin6Line className=" text-pink-200 w-[18px] h-[18px] relative" />
+              <span className="text-center text-pink-200 text-[16px] font-medium leading-normal">Remove</span>
             </button>
-            <p className="mb-6 text-3xl font-medium text-yellow-100">
+            <p className="text-yellow-400 text-[24px] font-semibold leading-loose">
               ₹ {course?.price}
             </p>
           </div>

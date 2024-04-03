@@ -11,7 +11,7 @@ import {
   deleteSubSection,
 } from "../../../../../services/operations/courseDetailsAPI"
 import { setCourse } from "../../../../../slices/courseSlice"
-import ConfirmationModal from "../../../../Common/ConfirmationModal"
+import ConfirmationModal from "../../../../common/ConfirmationModal"
 import SubSectionModal from "./SubSectionModal"
 
 export default function NestedView({ handleChangeEditSectionName }) {
@@ -88,11 +88,9 @@ export default function NestedView({ handleChangeEditSectionName }) {
                       btn1Handler: () => handleDeleleSection(section._id),
                       btn2Handler: () => setConfirmationModal(null),
                     })
-
                   }
                 >
                   <RiDeleteBin6Line className="text-xl text-richblack-300" />
-              
                 </button>
                 <span className="font-medium text-richblack-300">|</span>
                 <AiFillCaretDown className={`text-xl text-richblack-300`} />
@@ -130,7 +128,8 @@ export default function NestedView({ handleChangeEditSectionName }) {
                           text2: "This lecture will be deleted",
                           btn1Text: "Delete",
                           btn2Text: "Cancel",
-                          btn1Handler: () => handleDeleteSubSection(data._id, section._id),
+                          btn1Handler: () =>
+                            handleDeleteSubSection(data._id, section._id),
                           btn2Handler: () => setConfirmationModal(null),
                         })
                       }

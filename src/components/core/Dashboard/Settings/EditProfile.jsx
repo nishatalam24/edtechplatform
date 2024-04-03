@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 import { updateProfile } from "../../../../services/operations/SettingsAPI"
-import IconBtn from "../../../Common/IconBtn"
+import IconBtn from "../../../common/IconBtn"
 
 const genders = ["Male", "Female", "Non-Binary", "Prefer not to say", "Other"]
 
@@ -126,7 +126,7 @@ export default function EditProfile() {
               </select>
               {errors.gender && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your Date of Birth.
+                  Please Enter Your Gender
                 </span>
               )}
             </div>

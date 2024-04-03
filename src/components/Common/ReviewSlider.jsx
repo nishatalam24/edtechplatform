@@ -14,7 +14,7 @@ import { FaStar } from "react-icons/fa"
 import { Autoplay, FreeMode, Pagination } from "swiper"
 
 // Get apiFunction and the endpoint
-import { apiConnector } from "../../services/apiConnector"
+import { apiConnector } from "../../services/apiconnector"
 import { ratingsEndpoints } from "../../services/apis"
 
 function ReviewSlider() {
@@ -41,8 +41,6 @@ function ReviewSlider() {
         <Swiper
           slidesPerView={4}
           spaceBetween={25}
-          loop={true}
-          freeMode={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -53,7 +51,7 @@ function ReviewSlider() {
           {reviews.map((review, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
+                <div className="flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25 h-48">
                   <div className="flex items-center gap-4">
                     <img
                       src={
